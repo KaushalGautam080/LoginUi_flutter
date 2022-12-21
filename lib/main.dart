@@ -18,21 +18,40 @@ class _HomepageState extends State<Homepage> {
       appBar: AppBar(
         title: Text('Welcome'),
       ),
-      body: Container(
-        padding: EdgeInsets.all(12.4),
-        child: Column(
-          children: [
-            TextField(
-              decoration: InputDecoration(
-                  labelText: "Username", icon: Icon(Icons.people)),
-            ),
-            TextField(
-              decoration: InputDecoration(
-                labelText: "Password",
-                icon: Icon(Icons.password_sharp),
+      body: Center(
+        child: SingleChildScrollView(
+          physics: BouncingScrollPhysics(),
+          child: Card(
+            elevation: 10,
+            child: Container(
+              width: 300,
+              height: 1200,
+              padding: EdgeInsets.all(12.4),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  TextField(
+                    decoration: InputDecoration(
+                        labelText: "Username", icon: Icon(Icons.people)),
+                  ),
+                  SizedBox(height: 10),
+                  TextField(
+                    decoration: InputDecoration(
+                      labelText: "Password",
+                      icon: Icon(Icons.password_sharp),
+                    ),
+                  ),
+                  SizedBox(height: 10),
+                  MaterialButton(
+                    onPressed: () {},
+                    child: Text("Login"),
+                    color: Colors.blue,
+                    textColor: Colors.white,
+                  ),
+                ],
               ),
-            )
-          ],
+            ),
+          ),
         ),
       ),
     );
